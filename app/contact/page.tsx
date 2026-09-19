@@ -1,7 +1,7 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { PageIntro, StatementLink } from "@/components/shared";
 import { ContactForm } from "@/components/contact-form";
-import { company, pageMetadata, registration } from "@/lib/site";
+import { company, contactLinks, pageMetadata, registration } from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact & Request a Quote",
   "Discuss grounds maintenance, landscaping, seasonal site care, and facility support needs with Ironwood Support Services.",
@@ -29,17 +29,16 @@ export default function Contact() {
             <div>
               <Mail size={21} />
               <dt>Email</dt>
-              <dd>{company.email}</dd>
+              <dd>
+                <a href={contactLinks.email}>{company.email}</a>
+              </dd>
             </div>
             <div>
               <Phone size={21} />
               <dt>Phone</dt>
-              <dd>{company.phone}</dd>
-            </div>
-            <div>
-              <MapPin size={21} />
-              <dt>Service area</dt>
-              <dd>{company.serviceArea}</dd>
+              <dd>
+                <a href={contactLinks.phone}>{company.phone}</a>
+              </dd>
             </div>
           </dl>
           <StatementLink />

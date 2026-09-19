@@ -4,9 +4,8 @@ import type { Metadata } from "next";
 // Keep placeholders until verified; do not imply an active SAM registration.
 export const company = {
   name: "Ironwood Support Services",
-  email: "[ADD EMAIL]",
-  phone: "[ADD PHONE]",
-  serviceArea: "[ADD SERVICE AREA]",
+  email: "support@ironwoodsupportservices.com",
+  phone: "203-807-0250",
   uei: "[ADD UEI]",
   cage: "[ADD CAGE]",
   // TODO(owner): Set true only after confirming SAM.gov registration is active,
@@ -17,6 +16,10 @@ export const company = {
 };
 // One source of truth keeps footer, contact page, and statement in sync.
 // Having identifiers alone does not establish an active SAM registration.
+export const contactLinks = {
+  email: `mailto:${company.email}`,
+  phone: `tel:+1${company.phone.replace(/\D/g, "")}`,
+};
 export const samIsActive =
   company.samActive &&
   [company.uei, company.cage].every(

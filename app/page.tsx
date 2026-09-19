@@ -10,9 +10,9 @@ import {
   CalendarDays,
   ClipboardCheck,
   MessageSquare,
-  MapPin,
+  Landmark,
 } from "lucide-react";
-import { coreServices, company, pageMetadata } from "@/lib/site";
+import { coreServices, pageMetadata } from "@/lib/site";
 import { CTA, StatementLink } from "@/components/shared";
 export const metadata = pageMetadata(
   "Facilities & Grounds Services",
@@ -201,20 +201,19 @@ export default function Home() {
           <StatementLink />
         </div>
         <aside className="area-card">
-          <MapPin size={29} strokeWidth={1.4} />
-          <p className="eyebrow">SERVICE AREA</p>
+          <Landmark size={29} strokeWidth={1.4} />
+          <p className="eyebrow">CONTRACTING</p>
           <h3>
-            Local attention.
+            Built for public-sector
             <br />
-            Site-specific planning.
+            requirements.
           </h3>
-          <p className="placeholder">{company.serviceArea}</p>
           <p>
-            Share your site location so we can discuss service availability and
-            scheduling.
+            Share the site, scope, and solicitation details so we can discuss
+            fit and delivery.
           </p>
           <Link href="/contact" className="text-link">
-            Discuss your location <ArrowRight size={18} />
+            Discuss a requirement <ArrowRight size={18} />
           </Link>
         </aside>
       </section>

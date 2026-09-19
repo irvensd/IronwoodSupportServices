@@ -3,6 +3,7 @@ import { PrintButton } from "@/components/print-button";
 import { Brand } from "@/components/brand";
 import {
   company,
+  contactLinks,
   naics,
   growthNaics,
   pageMetadata,
@@ -109,8 +110,6 @@ export default function CapabilityStatement() {
                 <dd>{company.uei}</dd>
                 <dt>CAGE</dt>
                 <dd>{company.cage}</dd>
-                <dt>Service area</dt>
-                <dd>{company.serviceArea}</dd>
               </dl>
             </section>
             <section>
@@ -143,7 +142,9 @@ export default function CapabilityStatement() {
         <footer className="statement-footer">
           <strong>Let’s discuss your site.</strong>
           <p>
-            {company.email} &nbsp; | &nbsp; {company.phone}
+            <a href={contactLinks.email}>{company.email}</a>
+            &nbsp; | &nbsp;
+            <a href={contactLinks.phone}>{company.phone}</a>
           </p>
           <p className="statement-disclaimer">
             New company; no federal past performance, contract vehicles, or

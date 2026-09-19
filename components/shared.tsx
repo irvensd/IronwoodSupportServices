@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
 import { Brand } from "./brand";
-import { company, registration } from "@/lib/site";
+import { company, contactLinks, registration } from "@/lib/site";
 export function CTA() {
   return (
     <section className="cta-section no-print">
@@ -42,11 +42,10 @@ export function Footer() {
         <div>
           <h3>Connect</h3>
           <p>
-            {company.email}
+            <a href={contactLinks.email}>{company.email}</a>
             <br />
-            {company.phone}
+            <a href={contactLinks.phone}>{company.phone}</a>
           </p>
-          <p>Service area: {company.serviceArea}</p>
         </div>
         <div>
           <h3>Contracting</h3>

@@ -35,7 +35,7 @@ No Vercel-specific packages are required. Informational routes are prerendered. 
 
 Search for `TODO`, `[ADD`, and `pending` before launch.
 
-- `lib/site.ts`: replace `[ADD EMAIL]`, `[ADD PHONE]`, `[ADD SERVICE AREA]`, `[ADD UEI]`, `[ADD CAGE]`, `[ADD OWNER NAME]`, and `[ADD OWNER BIO]` with verified details. All shared contact and registration fields originate here.
+- `lib/site.ts`: replace `[ADD UEI]`, `[ADD CAGE]`, `[ADD OWNER NAME]`, and `[ADD OWNER BIO]` with verified details. All shared contact and registration fields originate here.
 - `app/about/page.tsx`: replace `[ADD VERIFIED COMMERCIAL EXPERIENCE]`; add an accurate principal biography. Clearly distinguish a principal's prior commercial experience from Ironwood's own past performance.
 - `lib/site.ts`: once SAM.gov registration is confirmed active, fill both `uei` and `cage` and set `samActive: true`, then rebuild/redeploy. The shared registration configuration replaces pending wording throughout Capabilities, Contact, the footer, and the capability statement. Identifiers alone do not establish active registration; the site stays pending until all three values are configured. Confirm NAICS and PSC entries against the company's actual registration. IT codes are secondary/growth capability areas, not automatically claimed as registered.
 - `app/page.tsx`, `public/images/grounds.jpg`: TODO(owner): replace illustrative stock photography with approved company imagery if available. Do not imply the photographed property is a client or completed project. Update the image alt text and credits when replacing it.
