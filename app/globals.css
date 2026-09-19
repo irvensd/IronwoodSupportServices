@@ -215,15 +215,15 @@ button:disabled {
   height: 44px;
 }
 .brand > span {
-  font-size: 25px;
-  letter-spacing: 0.12em;
+  font-size: 22px;
+  letter-spacing: 0.08em;
   font-weight: 700;
   line-height: 1.1;
 }
 .brand small {
   display: block;
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   margin-top: 5px;
 }
 .navigation {
@@ -1171,7 +1171,7 @@ button:disabled {
     min-height: 83px;
   }
   .brand > span {
-    font-size: 22px;
+    font-size: 18px;
   }
   .brand svg {
     width: 39px;

@@ -4,13 +4,13 @@ import { ContactForm } from "@/components/contact-form";
 import { company, pageMetadata, registration } from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact & Request a Quote",
-  "Discuss grounds maintenance, landscaping, seasonal site care, and facility support needs with Summit Site Services LLC.",
+  "Discuss grounds maintenance, landscaping, seasonal site care, and facility support needs with Ironwood Support Services.",
   "/contact",
 );
 export default function Contact() {
   return (
     <>
-      <PageIntro label="CONTACT SUMMIT" title="Let’s put a plan in place.">
+      <PageIntro label="CONTACT IRONWOOD" title="Let’s put a plan in place.">
         <p>
           Have a site that needs attention or a scope to discuss? Share the
           details of your property, schedule, and service needs.

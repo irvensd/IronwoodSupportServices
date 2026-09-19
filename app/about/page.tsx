@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, Mountain } from "lucide-react";
+import { ArrowRight, Trees } from "lucide-react";
 import { CTA, PageIntro } from "@/components/shared";
 import { company, pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "About Summit",
-  "Meet Summit Site Services LLC, a new U.S. small business focused on reliable public-site care and broad facility support.",
+  "About Ironwood",
+  "Meet Ironwood Support Services, a new U.S. small business focused on reliable public-site care and broad facility support.",
   "/about",
 );
 export default function About() {
   return (
     <>
       <PageIntro
-        label="ABOUT SUMMIT"
+        label="ABOUT IRONWOOD"
         title="Grounded in service. Built to grow."
       >
         <p>
@@ -21,7 +21,7 @@ export default function About() {
       </PageIntro>
       <section className="section container about-grid">
         <div className="about-panel">
-          <Mountain size={64} strokeWidth={1} />
+          <Trees size={64} strokeWidth={1} />
           <p>
             Reliable care for
             <br />
@@ -29,7 +29,7 @@ export default function About() {
             <br />
             <strong>serve people.</strong>
           </p>
-          <span>SUMMIT SITE SERVICES LLC</span>
+          <span>IRONWOOD SUPPORT SERVICES</span>
         </div>
         <div>
           <p className="eyebrow">OUR FOUNDATION</p>
@@ -39,7 +39,7 @@ export default function About() {
             Keep the bigger picture in view.
           </h2>
           <p>
-            Summit Site Services LLC is entering government and public-sector
+            Ironwood Support Services is entering government and public-sector
             contracting with facilities and grounds services at its core.
             Mowing, landscaping, groundskeeping, and seasonal site care are our
             starting point.
@@ -71,7 +71,7 @@ export default function About() {
             </h2>
           </div>
           <div className="owner-card">
-            {/* TODO(owner): Add principal's name and factual commercial biography. Distinguish individual experience from Summit's company past performance. Add an owner-approved portrait only if desired. */}
+            {/* TODO(owner): Add principal's name and factual commercial biography. Distinguish individual experience from Ironwood's company past performance. Add an owner-approved portrait only if desired. */}
             <p className="eyebrow">COMPANY PRINCIPAL</p>
             <h3>{company.ownerName}</h3>
             <p>{company.ownerBio}</p>

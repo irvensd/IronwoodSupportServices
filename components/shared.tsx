@@ -36,7 +36,7 @@ export function Footer() {
         <div>
           <h3>Explore</h3>
           <Link href="/capabilities">Capabilities</Link>
-          <Link href="/about">About Summit</Link>
+          <Link href="/about">About Ironwood</Link>
           <Link href="/contact">Contact</Link>
         </div>
         <div>

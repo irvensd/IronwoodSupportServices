@@ -11,7 +11,7 @@ import {
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capability Statement",
-  "Print a one-page overview of Summit Site Services LLC competencies, differentiators, NAICS codes, and contracting details.",
+  "Print a one-page overview of Ironwood Support Services competencies, differentiators, NAICS codes, and contracting details.",
   "/capability-statement",
 );
 export default function CapabilityStatement() {

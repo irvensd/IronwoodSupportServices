@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 // TODO(owner): Replace these values after confirming the company's details.
 // Keep placeholders until verified; do not imply an active SAM registration.
 export const company = {
-  name: "Summit Site Services LLC",
+  name: "Ironwood Support Services",
   email: "[ADD EMAIL]",
   phone: "[ADD PHONE]",
   serviceArea: "[ADD SERVICE AREA]",

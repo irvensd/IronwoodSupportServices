@@ -12,7 +12,7 @@ import {
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capabilities",
-  "Explore Summit’s grounds maintenance, landscaping, seasonal care, facility support, and contracting capability areas.",
+  "Explore Ironwood’s grounds maintenance, landscaping, seasonal care, facility support, and contracting capability areas.",
   "/capabilities",
 );
 export default function Capabilities() {

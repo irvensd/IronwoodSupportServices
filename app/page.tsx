@@ -16,7 +16,7 @@ import { coreServices, company, pageMetadata } from "@/lib/site";
 import { CTA, StatementLink } from "@/components/shared";
 export const metadata = pageMetadata(
   "Facilities & Grounds Services",
-  "Summit Site Services LLC provides mowing, landscaping, groundskeeping, and seasonal site care for public agencies and institutions.",
+  "Ironwood Support Services provides mowing, landscaping, groundskeeping, and seasonal site care for public agencies and institutions.",
   "/",
 );
 const icons = [Sprout, Trees, Leaf, Building2];
@@ -137,7 +137,7 @@ export default function Home() {
       <section className="why-section">
         <div className="container why-grid">
           <div>
-            <p className="eyebrow">THE SUMMIT APPROACH</p>
+            <p className="eyebrow">THE IRONWOOD APPROACH</p>
             <h2>
               Clear expectations.
               <br />
@@ -149,7 +149,7 @@ export default function Home() {
               details.
             </p>
             <Link className="text-link" href="/about">
-              Get to know Summit <ArrowRight size={18} />
+              Get to know Ironwood <ArrowRight size={18} />
             </Link>
           </div>
           <div className="principles">
