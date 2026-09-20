@@ -11,7 +11,7 @@ export function Header() {
     <header className="site-header no-print">
       <div className="utility">
         <div className="container flex items-center justify-between gap-4">
-          <span>Facilities. Grounds. A higher standard of care.</span>
+          <span>Facilities. Grounds. IT support.</span>
           <span className="utility-end">U.S. small business</span>
         </div>
       </div>

@@ -11,15 +11,19 @@ import {
   ClipboardCheck,
   MessageSquare,
   Landmark,
+  Monitor,
+  Server,
+  Code2,
 } from "lucide-react";
-import { coreServices, pageMetadata } from "@/lib/site";
+import { coreServices, itServices, pageMetadata } from "@/lib/site";
 import { CTA, StatementLink } from "@/components/shared";
 export const metadata = pageMetadata(
-  "Facilities & Grounds Services",
-  "Ironwood Support Services provides mowing, landscaping, groundskeeping, and seasonal site care for public agencies and institutions.",
+  "Facilities, Grounds & IT Services",
+  "Ironwood Support Services provides facilities, grounds, and IT services for public agencies and institutions.",
   "/",
 );
 const icons = [Sprout, Trees, Leaf, Building2];
+const itIcons = [Monitor, Server, Code2];
 export default function Home() {
   return (
     <>
@@ -31,16 +35,16 @@ export default function Home() {
               GROW.
             </p>
             <h1>
-              Facilities and
+              Facilities, grounds,
               <br />
-              <span>grounds services.</span>
+              <span>and IT services.</span>
             </h1>
             <p className="hero-audience">
               For public agencies and institutions.
             </p>
             <p className="hero-description">
-              Mowing, landscaping, and site care — with capacity to support
-              broader facility and business needs as clients require.
+              Site care and practical IT support — with capacity to take on
+              broader facility and technology needs as clients require.
             </p>
             <div className="hero-actions">
               <Link href="/contact" className="button button-green">
@@ -74,7 +78,7 @@ export default function Home() {
                 SERVICE THAT FOLLOWS THROUGH.
               </span>
               <span className="caption-number">
-                01 /<small>GROUNDS & FACILITIES</small>
+                01 /<small>GROUNDS, FACILITIES & IT</small>
               </span>
             </div>
           </div>
@@ -90,6 +94,8 @@ export default function Home() {
           <p>Seasonal site care</p>
           <i />
           <p>Facility site support</p>
+          <i />
+          <p>IT services</p>
         </div>
       </div>
       <section className="section container">
@@ -105,8 +111,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            From everyday grounds maintenance to the tasks that keep a property
-            ready for use, we start with your site’s needs.
+            From everyday grounds maintenance to the IT work that keeps
+            operations running, we start with a defined scope and a clear plan.
           </p>
         </div>
         <div className="services-grid">
@@ -133,6 +139,43 @@ export default function Home() {
         <Link className="text-link mt-8" href="/capabilities">
           Explore our full capabilities <ArrowRight size={18} />
         </Link>
+      </section>
+      <section className="section container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">IT SERVICES</p>
+            <h2>
+              Practical technology
+              <br />
+              support for public work.
+            </h2>
+          </div>
+          <p>
+            Help desk, systems support, and focused development — scoped to
+            each agency’s environment and requirements.
+          </p>
+        </div>
+        <div className="it-services-grid">
+          {itServices.map((service, i) => {
+            const Icon = itIcons[i];
+            return (
+              <article className="service-card" key={service.title}>
+                <div className="service-top">
+                  <Icon size={29} strokeWidth={1.4} />
+                  <span>0{i + 5}</span>
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <Link
+                  href={`/capabilities#it-service-${i + 1}`}
+                  aria-label={`Explore ${service.title}`}
+                >
+                  <ArrowUpRight size={21} />
+                </Link>
+              </article>
+            );
+          })}
+        </div>
       </section>
       <section className="why-section">
         <div className="container why-grid">
@@ -189,10 +232,9 @@ export default function Home() {
             <br />A broader service outlook.
           </h2>
           <p>
-            Our foundation is facilities and grounds. Additional capabilities
-            include janitorial and custodial services, facilities support
-            coordination, and technology and systems support for facility
-            operations and administrative environments.
+            Our foundation is facilities, grounds, and IT support. Additional
+            capabilities include janitorial and custodial services and
+            facilities support coordination.
           </p>
           <p className="muted">
             Availability is confirmed against each project’s scope, staffing,

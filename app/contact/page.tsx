@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { company, contactLinks, pageMetadata, registration } from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact & Request a Quote",
-  "Discuss grounds maintenance, landscaping, seasonal site care, and facility support needs with Ironwood Support Services.",
+  "Discuss facilities, grounds, and IT service needs with Ironwood Support Services.",
   "/contact",
 );
 export default function Contact() {

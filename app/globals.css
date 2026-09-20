@@ -405,6 +405,11 @@ button:disabled {
   grid-template-columns: repeat(4, 1fr);
   gap: 17px;
 }
+.it-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
 .service-card {
   position: relative;
   padding: 25px 23px 62px;
@@ -717,7 +722,7 @@ button:disabled {
 }
 .additional-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 .additional-grid article {
@@ -1271,7 +1276,8 @@ button:disabled {
     max-width: 550px;
     justify-self: start;
   }
-  .services-grid {
+  .services-grid,
+  .it-services-grid {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
@@ -1413,7 +1419,8 @@ button:disabled {
   .caption-number small {
     font-size: 7px;
   }
-  .services-grid {
+  .services-grid,
+  .it-services-grid {
     grid-template-columns: 1fr;
   }
   .service-card {

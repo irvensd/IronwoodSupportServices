@@ -28,7 +28,7 @@ export function Footer() {
         <div>
           <Brand />
           <p>
-            Facilities and grounds services
+            Facilities, grounds, and IT services
             <br />
             for public agencies and institutions.
           </p>

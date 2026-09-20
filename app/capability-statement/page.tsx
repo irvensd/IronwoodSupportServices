@@ -5,7 +5,6 @@ import {
   company,
   contactLinks,
   naics,
-  growthNaics,
   pageMetadata,
   samIsActive,
   registration,
@@ -35,12 +34,12 @@ export default function CapabilityStatement() {
         </header>
         <div className="statement-title">
           <h1>
-            Facilities and grounds services for public agencies and
+            Facilities, grounds, and IT services for public agencies and
             institutions.
           </h1>
           <p>
             {company.name} is a new U.S. small business focused on reliable
-            public-site care, with a broad support-services outlook.
+            public-site care and practical IT support.
           </p>
         </div>
         <div className="statement-columns">
@@ -68,6 +67,16 @@ export default function CapabilityStatement() {
                   <br />
                   Exterior upkeep and scope-specific site tasks.
                 </li>
+                <li>
+                  <strong>IT support & help desk</strong>
+                  <br />
+                  User, workstation, and endpoint support.
+                </li>
+                <li>
+                  <strong>Systems, network & development</strong>
+                  <br />
+                  Administration, maintenance, and scoped software work.
+                </li>
               </ul>
             </section>
             <section>
@@ -82,10 +91,8 @@ export default function CapabilityStatement() {
             <section>
               <h2>Additional capability areas</h2>
               <p>
-                Janitorial / custodial; facilities support coordination;
-                technology and systems support for facility operations and
-                administrative environments. Scope and delivery readiness
-                confirmed per project.
+                Janitorial / custodial and facilities support coordination.
+                Scope and delivery readiness confirmed per project.
               </p>
             </section>
             <section>
@@ -129,12 +136,10 @@ export default function CapabilityStatement() {
                 <br />
                 Housekeeping–Landscaping/Groundskeeping
               </p>
-              <p className="small">
-                <strong>Secondary / growth NAICS</strong>
+              <p className="statement-code">
+                <strong>PSC D302</strong>
                 <br />
-                {growthNaics.map(([code]) => code).join(" · ")}
-                <br />
-                Secondary capability areas.
+                IT and Telecom–Systems Development
               </p>
             </section>
           </aside>

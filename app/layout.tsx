@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: company.name, template: `%s | ${company.name}` },
   description:
-    "Facilities and grounds services for public agencies and institutions.",
+    "Facilities, grounds, and IT services for public agencies and institutions.",
   icons: { icon: "/icon.svg" },
 };
 export default function RootLayout({

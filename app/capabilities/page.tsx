@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CTA, PageIntro, StatementLink } from "@/components/shared";
 import {
   coreServices,
-  growthNaics,
+  itServices,
   naics,
   company,
   pageMetadata,
@@ -12,7 +12,7 @@ import {
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capabilities",
-  "Explore Ironwood’s grounds maintenance, landscaping, seasonal care, facility support, and contracting capability areas.",
+  "Explore Ironwood’s grounds, facility, IT, and contracting capability areas.",
   "/capabilities",
 );
 export default function Capabilities() {
@@ -23,9 +23,9 @@ export default function Capabilities() {
         title="Built around the needs of your site."
       >
         <p>
-          Focused grounds and facility services, with a broader support-services
-          outlook. Every engagement begins with a defined scope and a practical
-          service plan.
+          Grounds, facility, and IT services for public agencies and
+          institutions. Every engagement begins with a defined scope and a
+          practical service plan.
         </p>
         <StatementLink />
       </PageIntro>
@@ -55,6 +55,40 @@ export default function Capabilities() {
                   of our current core offering.
                 </p>
               )}
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="section container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">IT SERVICES</p>
+            <h2>Technology support with a defined scope.</h2>
+          </div>
+          <p>
+            Practical IT work for agency staff, facility operations, and
+            administrative systems. Availability is confirmed against each
+            requirement.
+          </p>
+        </div>
+        <div className="detail-grid">
+          {itServices.map((s, i) => (
+            <article
+              className="service-detail"
+              id={`it-service-${i + 1}`}
+              key={s.title}
+            >
+              <span className="detail-number">0{i + 5}</span>
+              <h2>{s.title}</h2>
+              <p>{s.description}</p>
+              <ul className="check-list">
+                {s.details.map((d) => (
+                  <li key={d}>
+                    <Check size={17} />
+                    {d}
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -116,13 +150,6 @@ export default function Capabilities() {
               facility needs.
             </p>
           </article>
-          <article>
-            <h3>Technology & systems support</h3>
-            <p>
-              Practical systems support for facility operations and
-              administrative environments.
-            </p>
-          </article>
         </div>
       </section>
       <section className="contracting-section">
@@ -170,19 +197,9 @@ export default function Capabilities() {
             </dl>
             <p className="psc">
               <strong>PSC S208</strong> Housekeeping–Landscaping/Groundskeeping
+              <br />
+              <strong>PSC D302</strong> IT and Telecom–Systems Development
             </p>
-            <div className="growth-codes">
-              <h4>Secondary / growth areas</h4>
-              {growthNaics.map(([code, name]) => (
-                <p key={code}>
-                  <strong>{code}</strong> {name}
-                </p>
-              ))}
-              <p className="small muted">
-                Capability areas for future growth; availability is confirmed
-                for each scope. Listing is not a current IT service commitment.
-              </p>
-            </div>
           </div>
         </div>
       </section>

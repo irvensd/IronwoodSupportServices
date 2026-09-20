@@ -4,7 +4,7 @@ import { CTA, PageIntro } from "@/components/shared";
 import { company, pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "About Ironwood",
-  "Meet Ironwood Support Services, a new U.S. small business focused on reliable public-site care and broad facility support.",
+  "Meet Ironwood Support Services, a new U.S. small business focused on public-site care and practical IT support.",
   "/about",
 );
 export default function About() {
@@ -40,15 +40,14 @@ export default function About() {
           </h2>
           <p>
             Ironwood Support Services is entering government and public-sector
-            contracting with facilities and grounds services at its core.
-            Mowing, landscaping, groundskeeping, and seasonal site care are our
-            starting point.
+            contracting with facilities, grounds, and IT services at its core.
+            Mowing, landscaping, site care, help desk support, and practical
+            systems work are our starting point.
           </p>
           <p>
-            We are building a broad support-services company that can grow with
-            client needs. That outlook includes custodial work, facilities
-            support coordination, and practical technology and systems support
-            for facility operations.
+            We are building a support-services company that can grow with
+            client needs. That outlook also includes custodial work and
+            facilities support coordination.
           </p>
           <p>
             As a new company, we focus on clear scopes, realistic commitments,

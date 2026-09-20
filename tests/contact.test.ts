@@ -22,6 +22,15 @@ test("accepts a complete inquiry with optional phone omitted", () =>
   assert.deepEqual(validateContact(valid), {}));
 test("requires all six mandatory fields", () =>
   assert.equal(Object.keys(validateContact(emptyContact)).length, 6));
+test("accepts an IT service inquiry", () =>
+  assert.deepEqual(
+    validateContact({
+      ...valid,
+      service: "IT support and help desk",
+      message: "Please discuss workstation and help desk support.",
+    }),
+    {},
+  ));
 test("rejects invalid email and unlisted services", () => {
   const errors = validateContact({
     ...valid,

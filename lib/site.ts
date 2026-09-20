@@ -116,14 +116,47 @@ export const coreServices = [
     ],
   },
 ];
+export const itServices = [
+  {
+    title: "IT support & help desk",
+    description:
+      "Day-to-day user and workstation support for agency staff and facility operations.",
+    details: [
+      "Help desk and end-user support",
+      "Workstation setup and troubleshooting",
+      "Account, access, and endpoint support",
+      "Clear documentation for the agreed scope",
+    ],
+  },
+  {
+    title: "Systems & network support",
+    description:
+      "Keep office and facility systems available, maintained, and easier to manage.",
+    details: [
+      "Network and systems administration within scope",
+      "Updates, backups, and routine maintenance",
+      "Coordination with existing vendors and agency IT",
+      "Support for facility operations systems",
+    ],
+  },
+  {
+    title: "Software & systems development",
+    description:
+      "Focused application, automation, and systems-design work when a defined technical scope is needed.",
+    details: [
+      "Custom application and scripting support",
+      "Systems design and implementation assistance",
+      "Website and internal-tool support",
+      "Scope and delivery readiness confirmed before work begins",
+    ],
+  },
+];
 export const naics = [
   ["561730", "Landscaping Services", "Primary"],
   ["561720", "Janitorial Services", "Additional"],
   ["561210", "Facilities Support Services", "Additional"],
   ["561790", "Other Services to Buildings and Dwellings", "Additional"],
-];
-export const growthNaics = [
-  ["541512", "Computer Systems Design Services"],
-  ["541511", "Custom Computer Programming Services"],
-  ["541519", "Other Computer Related Services"],
+  ["541512", "Computer Systems Design Services", "Additional"],
+  ["541511", "Custom Computer Programming Services", "Additional"],
+  ["541519", "Other Computer Related Services", "Additional"],
 ];
