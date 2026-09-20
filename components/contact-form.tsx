@@ -8,6 +8,7 @@ import {
   type ContactData,
   type ContactErrors,
 } from "@/lib/contact";
+import { company } from "@/lib/site";
 export function ContactForm() {
   const [data, setData] = useState<ContactData>(emptyContact);
   const [errors, setErrors] = useState<ContactErrors>({});
@@ -152,8 +153,9 @@ export function ContactForm() {
         />
       </div>
       <p className="form-disclosure">
-        Demo form: submissions are validated, but are not saved or delivered.
-        Please do not include sensitive information.
+        Your inquiry will be emailed to {company.email}. Please do not include
+        sensitive personal information or procurement-sensitive data beyond what
+        is needed to discuss the scope.
       </p>
       <button
         className="button button-green"

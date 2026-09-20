@@ -39,8 +39,7 @@ Search for `TODO`, `[ADD`, and `pending` before launch.
 - `app/about/page.tsx`: replace `[ADD VERIFIED COMMERCIAL EXPERIENCE]`; add an accurate principal biography. Clearly distinguish a principal's prior commercial experience from Ironwood's own past performance.
 - `lib/site.ts`: once SAM.gov registration is confirmed active, fill both `uei` and `cage` and set `samActive: true`, then rebuild/redeploy. The shared registration configuration replaces pending wording throughout Capabilities, Contact, the footer, and the capability statement. Identifiers alone do not establish active registration; the site stays pending until all three values are configured. Confirm NAICS and PSC entries against the company's actual registration. IT codes are secondary/growth capability areas, not automatically claimed as registered.
 - `app/page.tsx`, `public/images/grounds.jpg`: TODO(owner): replace illustrative stock photography with approved company imagery if available. Do not imply the photographed property is a client or completed project. Update the image alt text and credits when replacing it.
-- `components/contact-form.tsx`, `app/api/contact/route.ts`: connect delivery and update the demo disclosure and success message together.
-- `.env.local` / Vercel environment: set the public site origin. Do not commit credentials.
+- `.env.local` / Vercel: set `RESEND_API_KEY`, verify `ironwoodsupportservices.com` in Resend, and set `NEXT_PUBLIC_SITE_URL` to the public origin. Do not commit credentials.
 - If adding socioeconomic certifications or contract vehicles later, publish only verified, currently held credentials. None are claimed in this project.
 - Snow/ice work is explicitly a future option, conditional on equipment, staffing, and requirements.
 
@@ -50,9 +49,7 @@ Placeholders are intentionally visible and not disguised as active phone/email l
 
 The form includes name, organization, email, optional phone, city/state, service needed, and project details. It has explicit labels, autocomplete, keyboard focus, client-side errors, a submitting state, an announced result, and a hidden honeypot. Validation runs again on the server. Malformed, oversized, and invalid submissions return errors.
 
-The API currently **returns validation success only**. It neither stores nor delivers nor logs personal information. The visible form and result explain this behavior, so a visitor is not led to believe that an inquiry was sent.
-
-To connect Resend, add server-only credentials, a verified sender, and the destination inbox in the route's TODO block; use the visitor's email as `replyTo`, not the sender. Await the provider response before reporting delivery acceptance. To use Formspree, forward the validated fields from this route or replace the client submission endpoint. Add production rate limiting/anti-abuse as appropriate and a privacy notice that reflects the final handling. Replace the demo text only after delivery has been tested end-to-end.
+Validated inquiries are emailed to `support@ironwoodsupportservices.com` with Resend. The visitor's address is used as `replyTo`, not the sender. The API does not store or log personal information. Delivery requires `RESEND_API_KEY` and a verified Resend sending domain. The form discloses the destination inbox and asks visitors not to include unnecessary sensitive information. A basic per-address rate limit is applied.
 
 ## Capability statement
 
