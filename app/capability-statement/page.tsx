@@ -9,7 +9,6 @@ import {
   phoneIsPublished,
   registration,
   samIsActive,
-  serviceArea,
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capability Statement",
@@ -40,7 +39,7 @@ export default function CapabilityStatement() {
             institutions.
           </h1>
           <p>
-            {company.name} is a Houston-based small business. {`${serviceArea}.`} IT
+            {company.name} is a small business serving Greater Houston, TX. IT
             support is also available when a defined scope is needed.
           </p>
         </div>

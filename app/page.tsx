@@ -69,6 +69,7 @@ export default function Home() {
                 alt="Illustrative photograph of a worker trimming a grassy slope; not a photo of Ironwood’s work"
                 fill
                 priority
+                fetchPriority="high"
                 quality={60}
                 sizes="(max-width: 800px) 100vw, 640px"
                 className="object-cover"
@@ -80,7 +81,7 @@ export default function Home() {
                 <br />
                 SERVICE THAT FOLLOWS THROUGH.
               </span>
-              <span>GROUNDS & FACILITIES</span>
+              <span className="caption-label">GROUNDS & FACILITIES</span>
             </div>
           </div>
         </div>

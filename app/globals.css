@@ -1194,6 +1194,13 @@ button:disabled {
   .utility-end {
     display: none;
   }
+  .contact-details a,
+  .form-disclosure a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
+  }
   .footer-main a:not(.brand) {
     display: inline-flex;
     align-items: center;
@@ -1443,6 +1450,9 @@ button:disabled {
   .photo-caption {
     padding: 19px;
     font-size: 9px;
+  }
+  .caption-label {
+    font-size: 12px;
   }
   .services-grid,
   .it-services-grid {

@@ -239,6 +239,7 @@ export const structuredData = {
   name: company.name,
   url: siteUrl,
   email: company.email,
+  ...(phoneIsPublished ? { telephone: `+1-${company.phone}` } : {}),
   areaServed: {
     "@type": "AdministrativeArea",
     name: "Greater Houston, TX",
