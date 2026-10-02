@@ -190,7 +190,10 @@ button:disabled {
   color: #e2e8e4;
   font-size: 12px;
   letter-spacing: 0.025em;
-  padding: 8px 0;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .utility-end {
   font-size: 11px;
@@ -347,18 +350,6 @@ button:disabled {
   font-size: 10px;
   letter-spacing: 0.12em;
   line-height: 1.7;
-}
-.caption-number {
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-.caption-number small {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  margin-top: 8px;
 }
 .scope-strip {
   background: #edf0e9;
@@ -1200,13 +1191,8 @@ button:disabled {
   .section {
     padding-block: 62px;
   }
-  .utility {
-    font-size: 12px;
-  }
-  .utility .container {
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 6px 16px;
+  .utility-end {
+    display: none;
   }
   .footer-main a:not(.brand) {
     display: inline-flex;
@@ -1457,9 +1443,6 @@ button:disabled {
   .photo-caption {
     padding: 19px;
     font-size: 9px;
-  }
-  .caption-number small {
-    font-size: 7px;
   }
   .services-grid,
   .it-services-grid {

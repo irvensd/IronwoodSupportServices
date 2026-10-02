@@ -80,9 +80,7 @@ export default function Home() {
                 <br />
                 SERVICE THAT FOLLOWS THROUGH.
               </span>
-              <span className="caption-number">
-                01 /<small>GROUNDS & FACILITIES</small>
-              </span>
+              <span>GROUNDS & FACILITIES</span>
             </div>
           </div>
         </div>

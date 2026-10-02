@@ -9,7 +9,6 @@ import {
   phoneIsPublished,
   registration,
   samIsActive,
-  samPendingStatement,
   serviceArea,
 } from "@/lib/site";
 export const metadata = pageMetadata(
@@ -109,7 +108,9 @@ export default function CapabilityStatement() {
                 <dd>Greater Houston, TX</dd>
                 <dt>SAM.gov</dt>
                 <dd>
-                  {samIsActive ? "Registration active" : samPendingStatement}
+                  {samIsActive
+                    ? "Registration active"
+                    : "Not yet submitted (planned). UEI and CAGE code will be listed once issued."}
                 </dd>
                 <dt>UEI</dt>
                 <dd>{company.uei}</dd>

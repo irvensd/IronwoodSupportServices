@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="site-header no-print">
       <div className="utility">
-        <div className="container flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <div className="container flex items-center justify-between gap-4">
           <span>Grounds. Janitorial. Facilities.</span>
           <span className="utility-end">{serviceArea}</span>
         </div>

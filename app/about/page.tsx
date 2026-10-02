@@ -20,8 +20,8 @@ export default function About() {
         title="Grounded in service. Built to grow."
       >
         <p>
-          A Houston-based small business serving Greater Houston, TX, focused
-          on the places where public service happens.
+          A small business serving Greater Houston, TX, focused on the
+          places where public service happens.
         </p>
       </PageIntro>
       <section className="section container about-grid">
