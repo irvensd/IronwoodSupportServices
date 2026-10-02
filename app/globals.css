@@ -1208,6 +1208,15 @@ button:disabled {
     flex-wrap: wrap;
     gap: 6px 16px;
   }
+  .footer-main a:not(.brand) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-main > div > a:not(.brand) {
+    display: flex;
+    margin-bottom: 0;
+  }
   .nav-wrap {
     min-height: 83px;
   }

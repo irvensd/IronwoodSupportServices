@@ -4,8 +4,7 @@ import type { Metadata } from "next";
 // Keep placeholders until verified; do not imply an active SAM registration.
 export const serviceArea = "Serving Greater Houston, TX";
 
-/** Local Houston-area number (713, 281, 832, or 346). Unpublished while this sentinel remains. */
-export const phoneNumber = "TODO_LOCAL_HOUSTON_NUMBER";
+export const phoneNumber = "203-807-0250";
 
 export const company = {
   name: "Ironwood Support Services",
@@ -17,7 +16,8 @@ export const company = {
   // and replace BOTH identifier placeholders above. Rebuild/redeploy afterward.
   samActive: false,
   ownerName: "Irvens Dupuy",
-  ownerBio: "TODO_BIO",
+  ownerBio:
+    "Irvens Dupuy is the principal of Ironwood Support Services. He is building a Houston-based company for grounds maintenance, janitorial, and facilities support, and he confirms the scope, schedule, and staffing before work begins.",
 };
 
 export const phoneIsPublished =

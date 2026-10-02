@@ -41,7 +41,7 @@ export default function CapabilityStatement() {
             institutions.
           </h1>
           <p>
-            {company.name} is a new U.S. small business. {`${serviceArea}.`} IT
+            {company.name} is a Houston-based small business. {`${serviceArea}.`} IT
             support is also available when a defined scope is needed.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function CapabilityStatement() {
               <h2>Company data</h2>
               <dl className="statement-data">
                 <dt>Business</dt>
-                <dd>U.S. small business</dd>
+                <dd>Houston-based small business</dd>
                 <dt>Area</dt>
                 <dd>Greater Houston, TX</dd>
                 <dt>SAM.gov</dt>

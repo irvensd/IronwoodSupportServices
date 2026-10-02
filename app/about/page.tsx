@@ -9,7 +9,7 @@ import {
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "About Ironwood",
-  "Meet Ironwood Support Services, a new U.S. small business providing grounds maintenance, janitorial, and facilities support.",
+  "Meet Ironwood Support Services, a Houston-based small business providing grounds maintenance, janitorial, and facilities support.",
   "/about",
 );
 export default function About() {
@@ -20,8 +20,8 @@ export default function About() {
         title="Grounded in service. Built to grow."
       >
         <p>
-          A new U.S. small business serving Greater Houston, TX, focused on
-          the places where public service happens.
+          A Houston-based small business serving Greater Houston, TX, focused
+          on the places where public service happens.
         </p>
       </PageIntro>
       <section className="section container about-grid">
@@ -73,7 +73,6 @@ export default function About() {
             </h2>
           </div>
           <div className="owner-card">
-            {/* TODO(owner): Replace TODO_BIO in lib/site.ts with a verified biography. Do not add commercial experience until it is verified. */}
             <p className="eyebrow">COMPANY PRINCIPAL</p>
             <h3>{company.ownerName}</h3>
             {bioIsPublished ? <p>{company.ownerBio}</p> : null}

@@ -57,7 +57,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="hero-note">
-              A U.S. small business focused on the places people depend on.
+              A Houston-based small business focused on the places people depend on.
             </div>
           </div>
           <div className="hero-visual">
@@ -69,7 +69,8 @@ export default function Home() {
                 alt="Illustrative photograph of a worker trimming a grassy slope; not a photo of Ironwood’s work"
                 fill
                 priority
-                sizes="(max-width: 800px) 100vw, 50vw"
+                quality={60}
+                sizes="(max-width: 800px) 100vw, 640px"
                 className="object-cover"
               />
             </div>

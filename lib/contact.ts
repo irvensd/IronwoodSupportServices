@@ -1,10 +1,9 @@
 export const serviceOptions = [
   "Grounds maintenance and mowing",
   "Janitorial / custodial",
-  "Facility site support",
-  "Facilities support coordination",
+  "Facilities support",
   "Landscaping and groundskeeping",
-  "Seasonal site care",
+  "Storm, drainage, and heat-season care",
   "IT support and help desk",
   "Systems and network support",
   "Software and systems development",

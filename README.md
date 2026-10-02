@@ -35,14 +35,14 @@ No Vercel-specific packages are required. Informational routes are prerendered. 
 
 Search for `TODO` and `[ADD` before launch.
 
-- `lib/site.ts`: replace `[ADD UEI]` and `[ADD CAGE]` when those identifiers are issued. Replace `TODO_BIO` with a verified principal biography. The name on the about page is Irvens Dupuy. The bio stays hidden while it is still `TODO_BIO`. Do not add commercial experience until it is verified.
-- `lib/site.ts`: `phoneNumber` is `TODO_LOCAL_HOUSTON_NUMBER` until a local Houston number (713, 281, 832, or 346) is available. While the value contains `TODO`, the site shows email and the quote form only.
+- `lib/site.ts`: replace `[ADD UEI]` and `[ADD CAGE]` when those identifiers are issued. The about page names Irvens Dupuy and a short principal note. Do not add commercial experience, licenses, or years of work until they are verified.
+- `lib/site.ts`: the published phone number is `203-807-0250`, shown on the contact page, footer, and capability statement.
 - `lib/site.ts`: once SAM.gov registration is confirmed active, fill both `uei` and `cage` and set `samActive: true`, then rebuild/redeploy. Until then the site says registration has not yet been submitted. Identifiers alone do not establish active registration. Confirm NAICS and PSC entries against the company's actual registration. IT codes stay secondary.
 - `app/page.tsx`, `public/images/grounds.jpg`: TODO(owner): replace illustrative stock photography with approved company imagery if available. Do not imply the photographed property is a client or completed project. Update the image alt text and credits when replacing it.
 - `.env.local` / Vercel: set `RESEND_API_KEY`, verify `ironwoodsupportservices.com` in Resend, and set `NEXT_PUBLIC_SITE_URL` to `https://www.ironwoodsupportservices.com`. Do not commit credentials. If Vercel still has this variable set to localhost, change it and redeploy.
 - If adding socioeconomic certifications or contract vehicles later, publish only verified, currently held credentials. None are claimed in this project.
 
-The public phone number stays hidden until `phoneNumber` is a real number. Email links are active.
+The published phone number is `203-807-0250`. Email links are active.
 
 ## Contact form behavior
 
