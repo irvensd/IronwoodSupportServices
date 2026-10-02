@@ -4,26 +4,29 @@ import {
   ArrowRight,
   ArrowUpRight,
   Sprout,
-  Trees,
-  Leaf,
+  Brush,
   Building2,
+  Trees,
+  CloudRain,
   CalendarDays,
   ClipboardCheck,
   MessageSquare,
   Landmark,
   Monitor,
-  Server,
-  Code2,
 } from "lucide-react";
-import { coreServices, itServices, pageMetadata } from "@/lib/site";
+import {
+  coreServices,
+  itAlsoAvailable,
+  pageMetadata,
+  serviceArea,
+} from "@/lib/site";
 import { CTA, StatementLink } from "@/components/shared";
 export const metadata = pageMetadata(
-  "Facilities, Grounds & IT Services",
-  "Ironwood Support Services provides facilities, grounds, and IT services for public agencies and institutions.",
+  "Grounds, Janitorial & Facilities Support",
+  "Ironwood Support Services provides grounds maintenance, janitorial, and facilities support for public agencies and institutions. IT support is also available.",
   "/",
 );
-const icons = [Sprout, Trees, Leaf, Building2];
-const itIcons = [Monitor, Server, Code2];
+const icons = [Sprout, Brush, Building2, Trees, CloudRain];
 export default function Home() {
   return (
     <>
@@ -31,20 +34,19 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span className="eyebrow-line" /> GROUNDED IN SERVICE. BUILT TO
-              GROW.
+              <span className="eyebrow-line" /> {serviceArea.toUpperCase()}
             </p>
             <h1>
-              Facilities, grounds,
+              Grounds, janitorial,
               <br />
-              <span>and IT services.</span>
+              <span>and facilities support.</span>
             </h1>
             <p className="hero-audience">
               For public agencies and institutions.
             </p>
             <p className="hero-description">
-              Site care and practical IT support — with capacity to take on
-              broader facility and technology needs as clients require.
+              Mowing, cleaning, and practical site care for Greater Houston —
+              with IT support also available when a defined scope is needed.
             </p>
             <div className="hero-actions">
               <Link href="/contact" className="button button-green">
@@ -64,7 +66,7 @@ export default function Home() {
                   company photo when available; update alt text and README credit. */}
               <Image
                 src="/images/grounds.jpg"
-                alt="Maintained lawn and landscaped grounds around an institutional building; illustrative stock photograph"
+                alt="Illustrative photograph of a worker trimming a grassy slope; not a photo of Ironwood’s work"
                 fill
                 priority
                 sizes="(max-width: 800px) 100vw, 50vw"
@@ -78,7 +80,7 @@ export default function Home() {
                 SERVICE THAT FOLLOWS THROUGH.
               </span>
               <span className="caption-number">
-                01 /<small>GROUNDS, FACILITIES & IT</small>
+                01 /<small>GROUNDS & FACILITIES</small>
               </span>
             </div>
           </div>
@@ -89,13 +91,13 @@ export default function Home() {
           <span>OUR CORE FOCUS</span>
           <p>Grounds maintenance</p>
           <i />
+          <p>Janitorial</p>
+          <i />
+          <p>Facilities support</p>
+          <i />
           <p>Landscaping</p>
           <i />
-          <p>Seasonal site care</p>
-          <i />
-          <p>Facility site support</p>
-          <i />
-          <p>IT services</p>
+          <p>Storm & drainage care</p>
         </div>
       </div>
       <section className="section container">
@@ -107,12 +109,12 @@ export default function Home() {
             <h2>
               Well-kept sites.
               <br />
-              Well-supported operations.
+              Well-supported facilities.
             </h2>
           </div>
           <p>
-            From everyday grounds maintenance to the IT work that keeps
-            operations running, we start with a defined scope and a clear plan.
+            Grounds maintenance, janitorial, and facilities support start with
+            a defined scope and a clear plan.
           </p>
         </div>
         <div className="services-grid">
@@ -143,39 +145,28 @@ export default function Home() {
       <section className="section container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">IT SERVICES</p>
-            <h2>
-              Practical technology
-              <br />
-              support for public work.
-            </h2>
+            <p className="eyebrow">ALSO AVAILABLE</p>
+            <h2>IT support, when the scope calls for it.</h2>
           </div>
+          <p>{itAlsoAvailable.description}</p>
+        </div>
+        <article className="service-card also-card">
+          <div className="service-top">
+            <Monitor size={29} strokeWidth={1.4} />
+            <span>Also available</span>
+          </div>
+          <h3>{itAlsoAvailable.title}</h3>
           <p>
-            Help desk, systems support, and focused development — scoped to
-            each agency’s environment and requirements.
+            Help desk, systems support, and focused development — confirmed
+            against each requirement before work begins.
           </p>
-        </div>
-        <div className="it-services-grid">
-          {itServices.map((service, i) => {
-            const Icon = itIcons[i];
-            return (
-              <article className="service-card" key={service.title}>
-                <div className="service-top">
-                  <Icon size={29} strokeWidth={1.4} />
-                  <span>0{i + 5}</span>
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <Link
-                  href={`/capabilities#it-service-${i + 1}`}
-                  aria-label={`Explore ${service.title}`}
-                >
-                  <ArrowUpRight size={21} />
-                </Link>
-              </article>
-            );
-          })}
-        </div>
+          <Link
+            href="/capabilities#it-support"
+            aria-label="Explore IT support"
+          >
+            <ArrowUpRight size={21} />
+          </Link>
+        </article>
       </section>
       <section className="why-section">
         <div className="container why-grid">
@@ -226,15 +217,16 @@ export default function Home() {
       </section>
       <section className="section container support-grid">
         <div>
-          <p className="eyebrow">ROOM TO SUPPORT MORE</p>
+          <p className="eyebrow">HOW THE WORK FITS TOGETHER</p>
           <h2>
-            One company.
-            <br />A broader service outlook.
+            Grounds, janitorial,
+            <br />
+            and facilities support.
           </h2>
           <p>
-            Our foundation is facilities, grounds, and IT support. Additional
-            capabilities include janitorial and custodial services and
-            facilities support coordination.
+            Those three are the services we lead with in Greater Houston. IT
+            support is also available when a project needs a defined technical
+            scope.
           </p>
           <p className="muted">
             Availability is confirmed against each project’s scope, staffing,

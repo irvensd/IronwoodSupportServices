@@ -1,13 +1,13 @@
 export const serviceOptions = [
   "Grounds maintenance and mowing",
+  "Janitorial / custodial",
+  "Facility site support",
+  "Facilities support coordination",
   "Landscaping and groundskeeping",
   "Seasonal site care",
-  "Facility site support",
   "IT support and help desk",
   "Systems and network support",
   "Software and systems development",
-  "Janitorial / custodial",
-  "Facilities support coordination",
   "Multiple services / other",
 ] as const;
 export type ContactData = {

@@ -8,12 +8,14 @@ import "@fontsource/source-sans-3/600.css";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/shared";
-import { company, siteUrl } from "@/lib/site";
+import { company, serviceArea, siteUrl, structuredData } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: company.name, template: `%s | ${company.name}` },
-  description:
-    "Facilities, grounds, and IT services for public agencies and institutions.",
+  title: {
+    default: `${company.name} | ${serviceArea}`,
+    template: `%s | ${company.name}`,
+  },
+  description: `Grounds maintenance, janitorial, and facilities support for public agencies and institutions. ${serviceArea}.`,
   icons: { icon: "/icon.svg" },
 };
 export default function RootLayout({
@@ -24,6 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

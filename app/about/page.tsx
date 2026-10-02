@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { ArrowRight, Trees } from "lucide-react";
 import { CTA, PageIntro } from "@/components/shared";
-import { company, pageMetadata } from "@/lib/site";
+import {
+  bioIsPublished,
+  company,
+  pageMetadata,
+  serviceArea,
+} from "@/lib/site";
 export const metadata = pageMetadata(
   "About Ironwood",
-  "Meet Ironwood Support Services, a new U.S. small business focused on public-site care and practical IT support.",
+  "Meet Ironwood Support Services, a new U.S. small business providing grounds maintenance, janitorial, and facilities support.",
   "/about",
 );
 export default function About() {
@@ -15,8 +20,8 @@ export default function About() {
         title="Grounded in service. Built to grow."
       >
         <p>
-          A new U.S. small business with a practical focus: caring for the
-          places where public service happens.
+          A new U.S. small business serving Greater Houston, TX, focused on
+          the places where public service happens.
         </p>
       </PageIntro>
       <section className="section container about-grid">
@@ -36,23 +41,21 @@ export default function About() {
           <h2>
             Start with the site.
             <br />
-            Keep the bigger picture in view.
+            Keep the facility in view.
           </h2>
           <p>
             Ironwood Support Services is entering government and public-sector
-            contracting with facilities, grounds, and IT services at its core.
-            Mowing, landscaping, site care, help desk support, and practical
-            systems work are our starting point.
+            contracting with grounds maintenance, janitorial, and facilities
+            support at its core. {`${serviceArea}.`}
           </p>
           <p>
-            We are building a support-services company that can grow with
-            client needs. That outlook also includes custodial work and
-            facilities support coordination.
+            IT support is also available when a defined technical scope is
+            needed. Each opportunity is reviewed against the resources and
+            requirements needed to perform it well.
           </p>
           <p>
             As a new company, we focus on clear scopes, realistic commitments,
-            and accountable communication. Each opportunity is reviewed against
-            the resources and requirements needed to perform it well.
+            and accountable communication.
           </p>
           <Link href="/capabilities" className="text-link">
             See how we work <ArrowRight size={18} />
@@ -62,22 +65,18 @@ export default function About() {
       <section className="why-section">
         <div className="container owner-grid">
           <div>
-            <p className="eyebrow">LEADERSHIP & EXPERIENCE</p>
+            <p className="eyebrow">LEADERSHIP</p>
             <h2>
-              The people behind
+              The person behind
               <br />
               the commitment.
             </h2>
           </div>
           <div className="owner-card">
-            {/* TODO(owner): Add principal's name and factual commercial biography. Distinguish individual experience from Ironwood's company past performance. Add an owner-approved portrait only if desired. */}
+            {/* TODO(owner): Replace TODO_BIO in lib/site.ts with a verified biography. Do not add commercial experience until it is verified. */}
             <p className="eyebrow">COMPANY PRINCIPAL</p>
             <h3>{company.ownerName}</h3>
-            <p>{company.ownerBio}</p>
-            <p className="muted">
-              Principal’s commercial experience: [ADD VERIFIED COMMERCIAL
-              EXPERIENCE]
-            </p>
+            {bioIsPublished ? <p>{company.ownerBio}</p> : null}
           </div>
         </div>
       </section>

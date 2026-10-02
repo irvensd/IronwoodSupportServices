@@ -1,10 +1,17 @@
 import { Mail, Phone } from "lucide-react";
 import { PageIntro, StatementLink } from "@/components/shared";
 import { ContactForm } from "@/components/contact-form";
-import { company, contactLinks, pageMetadata, registration } from "@/lib/site";
+import {
+  company,
+  contactLinks,
+  pageMetadata,
+  phoneIsPublished,
+  registration,
+  serviceArea,
+} from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact & Request a Quote",
-  "Discuss facilities, grounds, and IT service needs with Ironwood Support Services.",
+  "Discuss grounds, janitorial, and facilities support with Ironwood Support Services. IT support is also available.",
   "/contact",
 );
 export default function Contact() {
@@ -13,7 +20,7 @@ export default function Contact() {
       <PageIntro label="CONTACT IRONWOOD" title="Let’s put a plan in place.">
         <p>
           Have a site that needs attention or a scope to discuss? Share the
-          details of your property, schedule, and service needs.
+          details of your property, schedule, and service needs. {`${serviceArea}.`}
         </p>
       </PageIntro>
       <section className="section container contact-grid">
@@ -33,13 +40,15 @@ export default function Contact() {
                 <a href={contactLinks.email}>{company.email}</a>
               </dd>
             </div>
-            <div>
-              <Phone size={21} />
-              <dt>Phone</dt>
-              <dd>
-                <a href={contactLinks.phone}>{company.phone}</a>
-              </dd>
-            </div>
+            {phoneIsPublished && contactLinks.phone ? (
+              <div>
+                <Phone size={21} />
+                <dt>Phone</dt>
+                <dd>
+                  <a href={contactLinks.phone}>{company.phone}</a>
+                </dd>
+              </div>
+            ) : null}
           </dl>
           <StatementLink />
           <p className="small muted">{registration.contactNote}</p>

@@ -3,12 +3,7 @@ import assert from "node:assert/strict";
 // @ts-ignore -- Node's native TypeScript runner requires the file extension.
 import { emptyContact, validateContact } from "../lib/contact.ts";
 // @ts-ignore -- Node's native TypeScript runner requires the file extension.
-import {
-  escapeHtml,
-  inquiryDestination,
-  inquirySubject,
-  inquiryText,
-} from "../lib/inquiry-email.ts";
+import { escapeHtml, inquiryDestination, inquirySubject, inquiryText } from "../lib/inquiry-email.ts";
 const valid = {
   ...emptyContact,
   name: "Alex Example",

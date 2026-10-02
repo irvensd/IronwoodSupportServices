@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
 import { Brand } from "./brand";
-import { company, contactLinks, registration } from "@/lib/site";
+import {
+  company,
+  contactLinks,
+  phoneIsPublished,
+  registration,
+  serviceArea,
+} from "@/lib/site";
 export function CTA() {
   return (
     <section className="cta-section no-print">
@@ -28,9 +34,11 @@ export function Footer() {
         <div>
           <Brand />
           <p>
-            Facilities, grounds, and IT services
+            Grounds, janitorial, and facilities support
             <br />
             for public agencies and institutions.
+            <br />
+            {`${serviceArea}.`}
           </p>
         </div>
         <div>
@@ -38,13 +46,18 @@ export function Footer() {
           <Link href="/capabilities">Capabilities</Link>
           <Link href="/about">About Ironwood</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/privacy">Privacy</Link>
         </div>
         <div>
           <h3>Connect</h3>
           <p>
             <a href={contactLinks.email}>{company.email}</a>
-            <br />
-            <a href={contactLinks.phone}>{company.phone}</a>
+            {phoneIsPublished && contactLinks.phone ? (
+              <>
+                <br />
+                <a href={contactLinks.phone}>{company.phone}</a>
+              </>
+            ) : null}
           </p>
         </div>
         <div>

@@ -4,15 +4,16 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Brand } from "./brand";
+import { serviceArea } from "@/lib/site";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   return (
     <header className="site-header no-print">
       <div className="utility">
-        <div className="container flex items-center justify-between gap-4">
-          <span>Facilities. Grounds. IT support.</span>
-          <span className="utility-end">U.S. small business</span>
+        <div className="container flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+          <span>Grounds. Janitorial. Facilities.</span>
+          <span className="utility-end">{serviceArea}</span>
         </div>
       </div>
       <div className="container nav-wrap">

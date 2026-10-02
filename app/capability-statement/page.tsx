@@ -6,8 +6,11 @@ import {
   contactLinks,
   naics,
   pageMetadata,
-  samIsActive,
+  phoneIsPublished,
   registration,
+  samIsActive,
+  samPendingStatement,
+  serviceArea,
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capability Statement",
@@ -34,12 +37,12 @@ export default function CapabilityStatement() {
         </header>
         <div className="statement-title">
           <h1>
-            Facilities, grounds, and IT services for public agencies and
+            Grounds, janitorial, and facilities support for public agencies and
             institutions.
           </h1>
           <p>
-            {company.name} is a new U.S. small business focused on reliable
-            public-site care and practical IT support.
+            {company.name} is a new U.S. small business. {`${serviceArea}.`} IT
+            support is also available when a defined scope is needed.
           </p>
         </div>
         <div className="statement-columns">
@@ -50,32 +53,33 @@ export default function CapabilityStatement() {
                 <li>
                   <strong>Grounds maintenance & mowing</strong>
                   <br />
-                  Scheduled mowing, edging, trimming, and cleanup.
+                  Scheduled mowing, edging, and trimming, roughly March through
+                  November.
                 </li>
                 <li>
-                  <strong>Landscaping & groundskeeping</strong>
+                  <strong>Janitorial & custodial</strong>
                   <br />
-                  Landscape bed upkeep, weeding, mulch, and common-area care.
+                  Routine cleaning for facility and administrative spaces.
                 </li>
                 <li>
-                  <strong>Seasonal site care</strong>
-                  <br />
-                  Leaf removal, seasonal cleanup, and site preparation.
-                </li>
-                <li>
-                  <strong>Related facility site support</strong>
+                  <strong>Facilities support</strong>
                   <br />
                   Exterior upkeep and scope-specific site tasks.
                 </li>
                 <li>
-                  <strong>IT support & help desk</strong>
+                  <strong>Landscaping & groundskeeping</strong>
                   <br />
-                  User, workstation, and endpoint support.
+                  Bed upkeep, weeding, mulch, and common-area care.
                 </li>
                 <li>
-                  <strong>Systems, network & development</strong>
+                  <strong>Storm, drainage & heat-season care</strong>
                   <br />
-                  Administration, maintenance, and scoped software work.
+                  Debris cleanup, drainage upkeep, and irrigation checks.
+                </li>
+                <li>
+                  <strong>IT support (also available)</strong>
+                  <br />
+                  Help desk, systems support, and scoped development.
                 </li>
               </ul>
             </section>
@@ -85,15 +89,7 @@ export default function CapabilityStatement() {
                 <li>Site-specific scheduling and defined scopes.</li>
                 <li>Quality checks and corrective-work coordination.</li>
                 <li>Responsive local communication and accountability.</li>
-                <li>Broader support capabilities as client needs grow.</li>
               </ul>
-            </section>
-            <section>
-              <h2>Additional capability areas</h2>
-              <p>
-                Janitorial / custodial and facilities support coordination.
-                Scope and delivery readiness confirmed per project.
-              </p>
             </section>
             <section>
               <h2>How we work</h2>
@@ -109,9 +105,11 @@ export default function CapabilityStatement() {
               <dl className="statement-data">
                 <dt>Business</dt>
                 <dd>U.S. small business</dd>
+                <dt>Area</dt>
+                <dd>Greater Houston, TX</dd>
                 <dt>SAM.gov</dt>
                 <dd>
-                  {samIsActive ? "Registration active" : "Registration pending"}
+                  {samIsActive ? "Registration active" : samPendingStatement}
                 </dd>
                 <dt>UEI</dt>
                 <dd>{company.uei}</dd>
@@ -148,8 +146,12 @@ export default function CapabilityStatement() {
           <strong>Let’s discuss your site.</strong>
           <p>
             <a href={contactLinks.email}>{company.email}</a>
-            &nbsp; | &nbsp;
-            <a href={contactLinks.phone}>{company.phone}</a>
+            {phoneIsPublished && contactLinks.phone ? (
+              <>
+                &nbsp; | &nbsp;
+                <a href={contactLinks.phone}>{company.phone}</a>
+              </>
+            ) : null}
           </p>
           <p className="statement-disclaimer">
             New company; no federal past performance, contract vehicles, or

@@ -9,10 +9,11 @@ import {
   pageMetadata,
   registration,
   samIsActive,
+  serviceArea,
 } from "@/lib/site";
 export const metadata = pageMetadata(
   "Capabilities",
-  "Explore Ironwood’s grounds, facility, IT, and contracting capability areas.",
+  "Explore Ironwood’s grounds maintenance, janitorial, and facilities support. IT support is also available.",
   "/capabilities",
 );
 export default function Capabilities() {
@@ -23,9 +24,9 @@ export default function Capabilities() {
         title="Built around the needs of your site."
       >
         <p>
-          Grounds, facility, and IT services for public agencies and
-          institutions. Every engagement begins with a defined scope and a
-          practical service plan.
+          Grounds maintenance, janitorial, and facilities support for public
+          agencies and institutions. {`${serviceArea}.`} Every engagement begins
+          with a defined scope and a practical service plan.
         </p>
         <StatementLink />
       </PageIntro>
@@ -48,26 +49,19 @@ export default function Capabilities() {
                   </li>
                 ))}
               </ul>
-              {i === 2 && (
-                <p className="small muted">
-                  Snow and ice services are a future option only, subject to
-                  equipment, staffing, and site requirements. They are not part
-                  of our current core offering.
-                </p>
-              )}
             </article>
           ))}
         </div>
       </section>
-      <section className="section container">
+      <section className="section container" id="it-support">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">IT SERVICES</p>
-            <h2>Technology support with a defined scope.</h2>
+            <p className="eyebrow">ALSO AVAILABLE</p>
+            <h2>IT support with a defined scope.</h2>
           </div>
           <p>
-            Practical IT work for agency staff, facility operations, and
-            administrative systems. Availability is confirmed against each
+            Help desk, systems support, and focused development when a
+            technical scope is needed. Availability is confirmed against each
             requirement.
           </p>
         </div>
@@ -78,7 +72,7 @@ export default function Capabilities() {
               id={`it-service-${i + 1}`}
               key={s.title}
             >
-              <span className="detail-number">0{i + 5}</span>
+              <span className="detail-number">0{i + 1}</span>
               <h2>{s.title}</h2>
               <p>{s.description}</p>
               <ul className="check-list">
@@ -124,34 +118,6 @@ export default function Capabilities() {
           </div>
         </div>
       </section>
-      <section className="section container">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">ADDITIONAL CAPABILITY AREAS</p>
-            <h2>Support that can grow with you.</h2>
-          </div>
-          <p>
-            We assess additional work individually and confirm staffing and
-            delivery readiness before accepting a scope.
-          </p>
-        </div>
-        <div className="additional-grid">
-          <article>
-            <h3>Janitorial & custodial</h3>
-            <p>
-              Routine cleaning and custodial support for facility and
-              administrative environments.
-            </p>
-          </article>
-          <article>
-            <h3>Facilities support coordination</h3>
-            <p>
-              Coordination of service tasks, schedules, and communication across
-              facility needs.
-            </p>
-          </article>
-        </div>
-      </section>
       <section className="contracting-section">
         <div className="container contracting-grid">
           <div>
@@ -170,8 +136,7 @@ export default function Capabilities() {
                 CAGE: {company.cage}
               </p>
               <p className="small">
-                {!samIsActive &&
-                  "Identifiers will be added once registration is complete. "}
+                {!samIsActive && "UEI and CAGE code will be listed once issued. "}
                 No socioeconomic certifications or contract vehicles are
                 claimed.
               </p>

@@ -2,81 +2,150 @@ import type { Metadata } from "next";
 
 // TODO(owner): Replace these values after confirming the company's details.
 // Keep placeholders until verified; do not imply an active SAM registration.
+export const serviceArea = "Serving Greater Houston, TX";
+
+/** Local Houston-area number (713, 281, 832, or 346). Unpublished while this sentinel remains. */
+export const phoneNumber = "TODO_LOCAL_HOUSTON_NUMBER";
+
 export const company = {
   name: "Ironwood Support Services",
   email: "support@ironwoodsupportservices.com",
-  phone: "203-807-0250",
+  phone: phoneNumber,
   uei: "[ADD UEI]",
   cage: "[ADD CAGE]",
   // TODO(owner): Set true only after confirming SAM.gov registration is active,
   // and replace BOTH identifier placeholders above. Rebuild/redeploy afterward.
   samActive: false,
-  ownerName: "[ADD OWNER NAME]",
-  ownerBio: "[ADD OWNER BIO]",
+  ownerName: "Irvens Dupuy",
+  ownerBio: "TODO_BIO",
 };
+
+export const phoneIsPublished =
+  company.phone.trim().length > 0 && !company.phone.includes("TODO");
+
+export const bioIsPublished =
+  company.ownerBio.trim().length > 0 && !company.ownerBio.includes("TODO");
+
 // One source of truth keeps footer, contact page, and statement in sync.
 // Having identifiers alone does not establish an active SAM registration.
 export const contactLinks = {
   email: `mailto:${company.email}`,
-  phone: `tel:+1${company.phone.replace(/\D/g, "")}`,
+  phone: phoneIsPublished
+    ? `tel:+1${company.phone.replace(/\D/g, "")}`
+    : undefined,
 };
+
 export const samIsActive =
   company.samActive &&
   [company.uei, company.cage].every(
     (value) => value.trim().length > 0 && !value.includes("[ADD"),
   );
+
+export const samPendingStatement =
+  "SAM.gov registration: not yet submitted (planned). UEI and CAGE code will be listed once issued.";
+
 export const registration = {
   label: samIsActive
     ? "SAM.gov registration: active"
-    : "SAM.gov registration: pending",
+    : "SAM.gov registration: not yet submitted (planned)",
   summary: samIsActive
     ? `UEI: ${company.uei} · CAGE: ${company.cage}`
-    : "SAM.gov registration pending.",
+    : samPendingStatement,
   contactNote: samIsActive
     ? `UEI: ${company.uei} · CAGE: ${company.cage}`
-    : "SAM.gov UEI and CAGE identifiers will be added after registration is complete.",
+    : samPendingStatement,
   opportunities: samIsActive
     ? "Available to discuss small-business set-aside opportunities, subject to applicable eligibility and solicitation requirements."
     : "Preparing to pursue small-business set-aside opportunities once SAM.gov registration is active and applicable eligibility requirements are met.",
 };
+
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.ironwoodsupportservices.com"
 ).replace(/\/$/, "");
+
+function withServiceArea(description: string) {
+  if (description.includes("Greater Houston")) return description;
+  const trimmed = description.replace(/\.?\s*$/, "");
+  return `${trimmed}. ${serviceArea}.`;
+}
+
 export function pageMetadata(
   title: string,
   description: string,
   path: string,
 ): Metadata {
+  const pageTitle = `${title} | ${company.name} | ${serviceArea}`;
+  const pageDescription = withServiceArea(description);
+  const shareImage = {
+    url: "/opengraph-image",
+    width: 1200,
+    height: 630,
+    alt: `${company.name}. Grounds, janitorial, and facilities support. ${serviceArea}.`,
+  };
   return {
-    title: { absolute: `${title} | ${company.name}` },
-    description,
+    title: { absolute: pageTitle },
+    description: pageDescription,
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} | ${company.name}`,
-      description,
+      title: pageTitle,
+      description: pageDescription,
       url: path,
       siteName: company.name,
       locale: "en_US",
       type: "website",
+      images: [shareImage],
     },
     twitter: {
-      card: "summary",
-      title: `${title} | ${company.name}`,
-      description,
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
+      images: [
+        {
+          url: "/twitter-image",
+          width: 1200,
+          height: 630,
+          alt: shareImage.alt,
+        },
+      ],
     },
   };
 }
+
 export const coreServices = [
   {
     title: "Grounds maintenance & mowing",
     short: "Consistent care. Well-kept grounds.",
     description:
-      "Scheduled mowing, edging, trimming, and cleanup to keep public-facing grounds orderly and usable.",
+      "Scheduled mowing, edging, trimming, and cleanup through Houston’s long mowing season, roughly March through November.",
     details: [
       "Routine mowing and turf maintenance",
       "Edging and trimming around site features",
       "Grass clipping and litter cleanup",
-      "Service schedules tailored to each site",
+      "Schedules set for a March-to-November mowing season",
+    ],
+  },
+  {
+    title: "Janitorial & custodial",
+    short: "Clean spaces, ready for use.",
+    description:
+      "Routine cleaning and custodial support for facility and administrative environments.",
+    details: [
+      "Routine interior cleaning",
+      "Restroom and common-area care",
+      "Trash removal within the agreed scope",
+      "Schedules aligned with building hours",
+    ],
+  },
+  {
+    title: "Facilities support",
+    short: "Support beyond the grounds.",
+    description:
+      "Exterior site tasks and coordinated facility support based on your priorities and scope.",
+    details: [
+      "Exterior common-area upkeep",
+      "Routine site condition observations",
+      "Site cleanup and support tasks",
+      "Coordination with facility points of contact",
     ],
   },
   {
@@ -86,36 +155,25 @@ export const coreServices = [
       "Practical landscape upkeep for the spaces around buildings, walkways, and shared outdoor areas.",
     details: [
       "Landscape bed maintenance and weeding",
-      "Mulch placement and seasonal bed care",
+      "Mulch placement and bed care",
       "Shrub and ornamental plant upkeep",
       "Walkway and common-area groundskeeping",
     ],
   },
   {
-    title: "Seasonal site care",
-    short: "Prepared for the season ahead.",
+    title: "Storm, drainage & heat-season care",
+    short: "Ready for Houston weather.",
     description:
-      "Leaf removal, seasonal cleanup, and site preparation as outdoor maintenance needs change.",
+      "Storm and hurricane debris cleanup, drainage and flood-prone area upkeep, and heat-season irrigation checks.",
     details: [
-      "Leaf collection and removal",
-      "Spring and fall grounds cleanup",
-      "Seasonal debris cleanup",
-      "Site preparation within agreed scope",
-    ],
-  },
-  {
-    title: "Facility site support",
-    short: "Support beyond the grounds.",
-    description:
-      "Related exterior site tasks and coordinated support based on your facility’s priorities and scope.",
-    details: [
-      "Exterior common-area upkeep",
-      "Routine site condition observations",
-      "Site cleanup and support tasks",
-      "Coordination with facility points of contact",
+      "Storm and hurricane debris cleanup",
+      "Drainage and flood-prone area upkeep",
+      "Heat-season irrigation checks",
+      "Site cleanup after heavy rain",
     ],
   },
 ];
+
 export const itServices = [
   {
     title: "IT support & help desk",
@@ -151,6 +209,13 @@ export const itServices = [
     ],
   },
 ];
+
+export const itAlsoAvailable = {
+  title: "IT support",
+  description:
+    "Also available when a defined scope is needed: help desk, systems support, and focused development.",
+};
+
 export const naics = [
   ["561730", "Landscaping Services", "Primary"],
   ["561720", "Janitorial Services", "Additional"],
@@ -160,3 +225,48 @@ export const naics = [
   ["541511", "Custom Computer Programming Services", "Additional"],
   ["541519", "Other Computer Related Services", "Additional"],
 ];
+
+export function inquiryFallbackMessage() {
+  if (phoneIsPublished) {
+    return `We could not send your inquiry. Please email ${company.email} or call ${company.phone}.`;
+  }
+  return `We could not send your inquiry. Please email ${company.email}.`;
+}
+
+export const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  name: company.name,
+  url: siteUrl,
+  email: company.email,
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Greater Houston, TX",
+  },
+  description:
+    "Grounds maintenance, janitorial, and facilities support for public agencies and institutions. Serving Greater Houston, TX. IT support is also available.",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Services",
+    itemListElement: [
+      ...coreServices.map((service, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+        },
+      })),
+      {
+        "@type": "Offer",
+        position: coreServices.length + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: itAlsoAvailable.title,
+          description: itAlsoAvailable.description,
+        },
+      },
+    ],
+  },
+};

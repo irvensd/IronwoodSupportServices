@@ -10,7 +10,7 @@
   --navy: #152c38;
   --green: #234d3d;
   --paper: #f7f8f4;
-  --muted: #5b6868;
+  --muted: #4a5756;
   --line: #d9dfd7;
 }
 * {
@@ -402,7 +402,7 @@ button:disabled {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 17px;
 }
 .it-services-grid {
@@ -427,7 +427,7 @@ button:disabled {
 }
 .service-top span {
   font-size: 11px;
-  color: #728176;
+  color: var(--green);
 }
 .service-card h3 {
   font-size: 20px;
@@ -452,6 +452,10 @@ button:disabled {
 }
 .service-card:hover {
   border-color: #8ba58d;
+}
+.also-card {
+  max-width: 440px;
+  min-height: 260px;
 }
 .why-section {
   background: #eaf0e8;
@@ -710,7 +714,7 @@ button:disabled {
   font:
     500 28px "Manrope",
     sans-serif;
-  color: #638264;
+  color: #2f4a34;
   display: block;
   margin-bottom: 20px;
 }
@@ -919,7 +923,7 @@ button:disabled {
   resize: vertical;
 }
 .form-field textarea::placeholder {
-  color: #6b7674;
+  color: #4a5756;
 }
 .form-field [aria-invalid="true"] {
   border-color: #a32b29;
@@ -933,6 +937,33 @@ button:disabled {
   font-size: 14px;
   color: var(--muted);
   margin: 24px 0;
+}
+.form-disclosure a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.privacy-copy {
+  max-width: 720px;
+}
+.privacy-copy h2 {
+  font-size: 28px;
+  margin: 36px 0 12px;
+}
+.privacy-copy h2:first-child {
+  margin-top: 0;
+}
+.privacy-copy p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.privacy-copy a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .form-notice {
   display: flex;
@@ -1170,10 +1201,12 @@ button:disabled {
     padding-block: 62px;
   }
   .utility {
-    font-size: 10px;
+    font-size: 12px;
   }
-  .utility-end {
-    display: none;
+  .utility .container {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 16px;
   }
   .nav-wrap {
     min-height: 83px;
@@ -1549,8 +1582,8 @@ button:disabled {
     padding: 17px 0;
   }
   .statement-title h1 {
-    font-size: 22pt;
-    line-height: 1.13;
+    font-size: 16pt;
+    line-height: 1.15;
   }
   .statement-title p {
     margin-top: 10px;
@@ -1566,7 +1599,7 @@ button:disabled {
     padding: 0 0 0 20px;
   }
   .cap-statement section {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     break-inside: avoid;
   }
   .cap-statement h2 {
@@ -1574,7 +1607,7 @@ button:disabled {
     margin-bottom: 8px;
   }
   .cap-statement li {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
   }
   .statement-data,
   .statement-code {

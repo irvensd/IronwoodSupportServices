@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { emptyContact, validateContact, type ContactData } from "@/lib/contact";
-import { company } from "@/lib/site";
+import { inquiryFallbackMessage } from "@/lib/site";
 import {
   inquiryDestination,
   inquiryFrom,
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
   if (!apiKey)
     return json(
       {
-        message: `We could not send your inquiry. Please email ${company.email} or call ${company.phone}.`,
+        message: inquiryFallbackMessage(),
       },
       503,
     );
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
   if (error)
     return json(
       {
-        message: `We could not send your inquiry. Please email ${company.email} or call ${company.phone}.`,
+        message: inquiryFallbackMessage(),
       },
       502,
     );

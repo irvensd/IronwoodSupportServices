@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import {
   emptyContact,
@@ -153,9 +154,8 @@ export function ContactForm() {
         />
       </div>
       <p className="form-disclosure">
-        Your inquiry will be emailed to {company.email}. Please do not include
-        sensitive personal information or procurement-sensitive data beyond what
-        is needed to discuss the scope.
+        {`Your inquiry will be emailed to ${company.email}. Please do not include sensitive personal information or procurement-sensitive data beyond what is needed to discuss the scope.`}{" "}
+        See our <Link href="/privacy">privacy policy</Link>.
       </p>
       <button
         className="button button-green"
